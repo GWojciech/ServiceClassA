@@ -1,12 +1,12 @@
-package com.golabek.wkck.serviceclassa.controller;
+package com.golabek.wkck.serviceclassa.database.databaseOperations;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.golabek.wkck.serviceclassa.database.DBHelper;
-import com.golabek.wkck.serviceclassa.model.Groups;
-import com.golabek.wkck.serviceclassa.model.Teams;
+import com.golabek.wkck.serviceclassa.database.databaseModels.Groups;
+import com.golabek.wkck.serviceclassa.database.databaseModels.Teams;
 
 import java.util.ArrayList;
 import java.util.List;

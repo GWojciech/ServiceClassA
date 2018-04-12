@@ -1,60 +1,46 @@
 package com.golabek.wkck.serviceclassa;
 
-
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.widget.TabHost;
-import android.widget.TextView;
 
-import com.golabek.wkck.serviceclassa.controller.GroupsController;
-import com.golabek.wkck.serviceclassa.controller.TeamsController;
-import com.golabek.wkck.serviceclassa.database.DBHelper;
-import com.golabek.wkck.serviceclassa.model.Groups;
-import com.golabek.wkck.serviceclassa.model.Teams;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.golabek.wkck.serviceclassa.tabbed.SectionsPageAdapter;
+import com.golabek.wkck.serviceclassa.tabbed.group1.ClassificationsGroup1Activity;
+import com.golabek.wkck.serviceclassa.tabbed.group1.ResultsGroup1Activity;
+import com.golabek.wkck.serviceclassa.tabbed.group1.ScheudleGroup1Activity;
+import com.golabek.wkck.serviceclassa.tabbed.group1.TableGroup1Activity;
 
 public class Group1Activity extends AppCompatActivity {
+
+    private static final String TAG = "Group1Activity";
+
+    private SectionsPageAdapter mSectionsPageAdapter;
+
+    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group1);
 
+        mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
 
+        // Set up the ViewPager with the sections adapter.
+        mViewPager = (ViewPager) findViewById(R.id.container2);
+        setupViewPager(mViewPager);
 
-        TabHost tabHost = (TabHost) findViewById(R.id.tabHost1);
-        tabHost.setup();
-
-        TabHost.TabSpec spec = tabHost.newTabSpec("results");
-        spec.setContent(R.id.tab1);
-        spec.setIndicator("Wyniki");
-        tabHost.addTab(spec);
-
-        spec = tabHost.newTabSpec("table");
-        spec.setContent(R.id.tab2);
-        spec.setIndicator("Tabela");
-        tabHost.addTab(spec);
-
-        spec = tabHost.newTabSpec("scheudle");
-        spec.setContent(R.id.tab3);
-        spec.setIndicator("Terminarz");
-        tabHost.addTab(spec);
-
-        spec = tabHost.newTabSpec("classifications");
-        spec.setContent(R.id.tab4);
-        spec.setIndicator("Klasyfikacje");
-        tabHost.addTab(spec);
-
-        TeamsController teamsController= new TeamsController(this);
-        List <Teams> teamsList;
-        teamsList = teamsController.getTeamsWithGroups();
-        TextView textView = (TextView) findViewById(R.id.textView3);
-        textView.setText(teamsList.toString());
-
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(mViewPager);
     }
 
-
+    private void setupViewPager(ViewPager viewPager) {
+        SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
+        adapter.addFragment(new ResultsGroup1Activity(), "Wyniki");
+        adapter.addFragment(new TableGroup1Activity(), "Tabela");
+        adapter.addFragment(new ScheudleGroup1Activity(), "Terminarz");
+        adapter.addFragment(new ClassificationsGroup1Activity(), "Klasyfikacje");
+        viewPager.setAdapter(adapter);
+    }
 
 }

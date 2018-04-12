@@ -4,10 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.golabek.wkck.serviceclassa.model.Groups;
-import com.golabek.wkck.serviceclassa.model.Teams;
-
-import static com.golabek.wkck.serviceclassa.model.Groups.SQL_CREATE_ENTRIES;
+import com.golabek.wkck.serviceclassa.database.databaseModels.Groups;
+import com.golabek.wkck.serviceclassa.database.databaseModels.Teams;
 
 /**
  * Created by Odbiorca on 2018-03-22.

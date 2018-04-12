@@ -5,18 +5,18 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="tabbed.group2.TableGroup2Activity">
+    tools:context=".tabbed.group2.TableGroup2Activity">
 
-     <ScrollView
-        android:layout_width="368dp"
-        android:layout_height="460dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="43dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical" >
+
+        </LinearLayout>
     </ScrollView>
 
  </android.support.constraint.ConstraintLayout>
