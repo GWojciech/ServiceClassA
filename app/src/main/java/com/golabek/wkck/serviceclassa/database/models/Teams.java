@@ -1,4 +1,4 @@
-package com.golabek.wkck.serviceclassa.database.databaseModels;
+package com.golabek.wkck.serviceclassa.database.models;
 
 import android.database.sqlite.SQLiteDatabase;
 
@@ -12,6 +12,16 @@ public class Teams {
     private String name;
     private Integer group_id;
     private String nameOfGroup;
+
+    public Integer getPoints() {
+        return points;
+    }
+
+    public void setPoints(Integer points) {
+        this.points = points;
+    }
+
+    private Integer points;
 
     public Integer getId() {
         return id;
@@ -64,7 +74,7 @@ public class Teams {
 
     @Override
     public String toString(){
-        return this.name+ " | " + this.nameOfGroup+"\n";
+        return this.name+ " | " + this.nameOfGroup+ " | "+ this.points + "\n";
     }
 
     public static void insertAll(SQLiteDatabase db) {

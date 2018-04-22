@@ -1,11 +1,12 @@
-package com.golabek.wkck.serviceclassa.database.databaseOperations;
+package com.golabek.wkck.serviceclassa.database.operations;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.golabek.wkck.serviceclassa.database.DBHelper;
-import com.golabek.wkck.serviceclassa.database.databaseModels.Groups;
+import com.golabek.wkck.serviceclassa.database.models.Groups;
+import com.golabek.wkck.serviceclassa.database.models.Teams;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.List;
  * Created by Odbiorca on 2018-03-22.
  */
 
-public class GroupsController{
+public class TeamsController {
 
 
     private Context context;
@@ -23,7 +24,7 @@ public class GroupsController{
             Groups.COLUMN_NAME_NAME
     };
 
-    public GroupsController(Context context){
+    public TeamsController(Context context){
         this.context=context;
 
     }
@@ -34,7 +35,7 @@ public class GroupsController{
 // you will actually use after this query.
 
 
-
+/*
     public List<Groups> getALlGroups() {
         DBHelper dbHelper = new DBHelper(context);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -60,4 +61,22 @@ public class GroupsController{
         dbHelper.close();
         return itemIds;
     }
+*/
+    public List <Teams> getTeamsWithGroups(){
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        List <Teams> listOfTeamsWithGroup = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT TEAMS.NAME as team, GROUPS.NAME as gro, SEASONS.POINTS as poi FROM GROUPS, TEAMS, SEASONS WHERE GROUPS.ID= TEAMS.GROUP_ID AND SEASONS.TEAM_ID=TEAMS.ID", null);
+        while (cursor.moveToNext()) {
+            Teams teams = new Teams();
+            teams.setName(cursor.getString(cursor.getColumnIndexOrThrow("team")));
+            teams.setNameOfGroup(cursor.getString(cursor.getColumnIndexOrThrow("gro")));
+            teams.setPoints(cursor.getInt(cursor.getColumnIndex("poi")));
+            listOfTeamsWithGroup.add(teams);
+        }
+        cursor.close();
+        dbHelper.close();
+        return listOfTeamsWithGroup;
+    }
+
 }
