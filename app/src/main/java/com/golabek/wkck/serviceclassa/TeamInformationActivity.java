@@ -1,6 +1,8 @@
 package com.golabek.wkck.serviceclassa;
 
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +15,8 @@ import com.golabek.wkck.serviceclassa.database.operations.TeamsController;
 import com.golabek.wkck.serviceclassa.tabbed.group1.TableGroup1Activity;
 
 public class TeamInformationActivity extends AppCompatActivity {
-    private Integer id;
+    public static Integer id;
+    public static boolean returnToTable = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +24,17 @@ public class TeamInformationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_team_information);
 
         Button button = findViewById(R.id.return_button_team_information);
-        id = TableGroup1Activity.idTeamToShow;
         button.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(TeamInformationActivity.this, Group1Activity.class));
+                if(returnToTable) {
+                    startActivity(new Intent(TeamInformationActivity.this, Group1Activity.class));
+                }
+                else {
+                    startActivity(new Intent(TeamInformationActivity.this, OtherActivity.class));
+                }
+                finishAfterTransition();
             }
         });
         fillView(button);

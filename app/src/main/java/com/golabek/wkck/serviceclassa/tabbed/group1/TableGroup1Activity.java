@@ -89,7 +89,8 @@ public class TableGroup1Activity extends Fragment {
                 @Override
                 public void onClick(View view) {
                     teamsToTable = listTable.get(finalI);
-                    idTeamToShow = teamsToTable.getTeamId();
+                    TeamInformationActivity.id = teamsToTable.getTeamId();
+                    TeamInformationActivity.returnToTable=true;
                     Intent i = new Intent(getActivity(), TeamInformationActivity.class);
                     startActivity(i);
 //                    ((Activity) getActivity()).overridePendingTransition(0,0);

@@ -1,5 +1,8 @@
 package com.golabek.wkck.serviceclassa;
 
+import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -66,7 +69,7 @@ public class OtherActivity extends AppCompatActivity {
 
     private void displayListOfPlayers(){
         BestScorers bestScorers = new BestScorers();
-        List <ScorersRank> playersList = bestScorers.getScorersList();
+        final List <ScorersRank> playersList = bestScorers.getScorersList();
         final SearchPlayerAdapter searchPlayerAdapter = new SearchPlayerAdapter(getApplicationContext(), R.layout.search_info, (ArrayList<ScorersRank>) playersList);
         ListView listView = (ListView) findViewById(R.id.listViewOther);
         listView.setAdapter(searchPlayerAdapter);
@@ -82,6 +85,17 @@ public class OtherActivity extends AppCompatActivity {
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 searchPlayerAdapter.getFilter().filter(s.toString());
+            }
+        });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                PlayerInformationActivity.number=i;
+                PlayerInformationActivity.returnToClassification = false;
+
+                startActivity(new Intent(OtherActivity.this, PlayerInformationActivity.class));
+                finishAfterTransition();
             }
         });
 
@@ -110,9 +124,14 @@ public class OtherActivity extends AppCompatActivity {
         });
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(view.getContext(), teamsList.get(i).getTeamName(),Toast.LENGTH_SHORT).show();
+                int id = teamsList.get(i).getTeamId();
+                TeamInformationActivity.id = id;
+                TeamInformationActivity.returnToTable=false;
+                startActivity(new Intent(OtherActivity.this, TeamInformationActivity.class));
+                finishAfterTransition();
             }
         });
 

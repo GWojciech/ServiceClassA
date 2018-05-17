@@ -7,24 +7,52 @@
     android:layout_height="match_parent"
     tools:context=".tabbed.group1.ScheudleGroup1Activity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="0dp">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-            <TableLayout
-                android:id="@+id/tabScheudle"
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal">
 
-            </TableLayout>
-        </LinearLayout>
-    </ScrollView>
+                <Button
+                    android:id="@+id/previousMatchdayScheudle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:drawableStart="@drawable/baseline_keyboard_arrow_left_black_18" />
+
+                <TextView
+                    android:id="@+id/scheudleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5. kolejka"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/nextMatchdayScheudle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:drawableStart="@drawable/baseline_keyboard_arrow_right_black_18" />
+
+            </TableRow>
+        </TableLayout>
+
+
+
+        <ListView android:id="@+id/listViewScheudle"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

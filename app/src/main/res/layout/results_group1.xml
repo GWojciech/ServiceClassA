@@ -5,24 +5,42 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tabbed.group2.ResultsGroup1Activity">
+    tools:context=".tabbed.group1.ResultsGroup1Activity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/previousMatchdayResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:drawableStart="@drawable/baseline_keyboard_arrow_left_black_18" />
 
             <TextView
-                android:id="@+id/textViewForDBTests"
-                android:layout_width="match_parent"
+                android:id="@+id/resultsTextView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="TextView" />
-        </LinearLayout>
-    </ScrollView>
+                android:text="x kolejka"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/nextMatchdayResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:drawableStart="@drawable/baseline_keyboard_arrow_right_black_18" />
+
+        </TableRow>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

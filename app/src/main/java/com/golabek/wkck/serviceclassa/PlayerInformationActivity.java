@@ -1,6 +1,8 @@
 package com.golabek.wkck.serviceclassa;
 
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +17,7 @@ import java.util.Random;
 
 public class PlayerInformationActivity extends AppCompatActivity {
     public static Integer number;
+    public static boolean returnToClassification = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +27,16 @@ public class PlayerInformationActivity extends AppCompatActivity {
 
         Button button = (Button) findViewById(R.id.buttonReturnPlayer);
         button.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PlayerInformationActivity.this, Group1Activity.class));
+                if(returnToClassification) {
+                    startActivity(new Intent(PlayerInformationActivity.this, Group1Activity.class));
+                }
+                else {
+                    startActivity(new Intent(PlayerInformationActivity.this, OtherActivity.class));
+                }
+                finishAfterTransition();
             }
         });
 

@@ -133,6 +133,7 @@ public class ClassificationsGroup1Activity extends Fragment {
                 public void onClick(View view) {
                     scorersRank = listOfScorers.get(finalI);
                     PlayerInformationActivity.number=finalI;
+                    PlayerInformationActivity.returnToClassification = true;
                     Intent i = new Intent(getActivity(), PlayerInformationActivity.class);
                     startActivity(i);
 //                    ((Activity) getActivity()).overridePendingTransition(0,0);
