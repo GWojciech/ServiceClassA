@@ -1,4 +1,4 @@
-package com.golabek.wkck.serviceclassa.model;
+package com.golabek.wkck.serviceclassa.database.models;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;

@@ -1,12 +1,11 @@
-package com.golabek.wkck.serviceclassa.controller;
+package com.golabek.wkck.serviceclassa.database.operations;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.golabek.wkck.serviceclassa.database.DBHelper;
-import com.golabek.wkck.serviceclassa.model.Groups;
-import com.golabek.wkck.serviceclassa.model.Teams;
+import com.golabek.wkck.serviceclassa.database.models.Groups;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.List;
  * Created by Odbiorca on 2018-03-22.
  */
 
-public class TeamsController {
+public class GroupsController{
 
 
     private Context context;
@@ -24,7 +23,7 @@ public class TeamsController {
             Groups.COLUMN_NAME_NAME
     };
 
-    public TeamsController(Context context){
+    public GroupsController(Context context){
         this.context=context;
 
     }
@@ -35,7 +34,7 @@ public class TeamsController {
 // you will actually use after this query.
 
 
-/*
+
     public List<Groups> getALlGroups() {
         DBHelper dbHelper = new DBHelper(context);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -60,21 +59,5 @@ public class TeamsController {
         cursor.close();
         dbHelper.close();
         return itemIds;
-    }
-*/
-    public List <Teams> getTeamsWithGroups(){
-        DBHelper dbHelper = new DBHelper(context);
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-        List <Teams> listOfTeamsWithGroup = new ArrayList<>();
-        Cursor cursor = db.rawQuery("SELECT TEAMS.NAME as team, GROUPS.NAME as gro FROM GROUPS, TEAMS WHERE GROUPS.ID= TEAMS.GROUP_ID", null);
-        while (cursor.moveToNext()) {
-            Teams teams = new Teams();
-            teams.setName(cursor.getString(cursor.getColumnIndexOrThrow("team")));
-            teams.setNameOfGroup(cursor.getString(cursor.getColumnIndexOrThrow("gro")));
-            listOfTeamsWithGroup.add(teams);
-        }
-        cursor.close();
-        dbHelper.close();
-        return listOfTeamsWithGroup;
     }
 }

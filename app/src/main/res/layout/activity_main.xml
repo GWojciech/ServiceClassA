@@ -37,7 +37,16 @@
                 android:id="@+id/otherButton"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:text="Inne statystyki" />
+                android:text="Wyszukaj" />
+
+            <TextView
+                android:id="@+id/textViewSentence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingTop="50dp"
+                android:text=',,Jak nie masz siły, to biegaj!"'
+                android:textAppearance="@style/TextAppearance.Compat.Notification.Title" />
         </LinearLayout>
     </ScrollView>
 

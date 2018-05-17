@@ -16,10 +16,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Group1Activity" />
-        <activity android:name=".Group2Activity" />
-        <activity android:name=".Group3Activity" />
-        <activity android:name=".OtherActivity"></activity>
+        <activity android:name=".OtherActivity" />
+        <activity
+            android:name=".Group2Activity"
+            android:label="@string/title_activity_group2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Group1Activity"
+            android:label="@string/title_activity_group1"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Group3Activity"
+            android:label="@string/title_activity_group3"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".TeamInformationActivity" />
+        <activity android:name=".PlayerInformationActivity"></activity>
     </application>
 
 </manifest>

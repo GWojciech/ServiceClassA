@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tabbed.group1.ClassificationsGroup1Activity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TableLayout
+                android:id="@+id/tabClassGr1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/buttonPlClassGr1"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="35dp"
+                        android:layout_height="match_parent"
+                        android:text="M" />
+
+                    <Button
+                        android:id="@+id/buttonNameClass1"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="56dp"
+                        android:layout_height="wrap_content"
+                        android:text="Imię"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                    <Button
+                        android:id="@+id/button3"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nazwisko"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                    <Button
+                        android:id="@+id/teamOfScorer"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="77dp"
+                        android:layout_height="wrap_content"
+                        android:text="Drużyna"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                    <Button
+                        android:id="@+id/GoalsOfScorer"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"
+                        android:text="B"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                    <Button
+                        android:id="@+id/AssistOfScorer"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"
+                        android:text="A"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                </TableRow>
+
+            </TableLayout>
+            </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
