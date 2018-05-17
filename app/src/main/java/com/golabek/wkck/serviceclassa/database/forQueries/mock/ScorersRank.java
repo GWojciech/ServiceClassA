@@ -3,6 +3,8 @@ package com.golabek.wkck.serviceclassa.database.forQueries.mock;
 import android.support.annotation.NonNull;
 
 public class ScorersRank implements Comparable<ScorersRank> {
+
+    public static int orderHelp;
     private String name;
     private String surname;
     private String teamName;
@@ -51,7 +53,17 @@ public class ScorersRank implements Comparable<ScorersRank> {
 
     @Override
     public int compareTo(@NonNull ScorersRank scorersRank) {
-        return scorersRank.getGoals()-this.goals;
+        if(orderHelp==1) {
+            return scorersRank.getGoals() - this.goals;
+        }
+        else if(orderHelp==2){
+            return this.goals-scorersRank.getGoals();
+        }
+        else if(orderHelp==3){
+            return scorersRank.getAssists()-this.assists;
+        }
+        else
+            return this.assists-scorersRank.getAssists();
     }
 
     @Override

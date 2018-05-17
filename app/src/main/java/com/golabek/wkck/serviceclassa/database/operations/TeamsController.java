@@ -79,4 +79,20 @@ public class TeamsController {
         return listOfTeamsWithGroup;
     }
 
+    public Teams getTeamById(int teamId){
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT TEAMS.NAME as team, GROUPS.NAME as gro, SEASONS.POINTS as poi FROM GROUPS, TEAMS, SEASONS WHERE TEAMS.ID="+teamId, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+            Teams teams = new Teams();
+            teams.setName(cursor.getString(cursor.getColumnIndexOrThrow("team")));
+            teams.setNameOfGroup(cursor.getString(cursor.getColumnIndexOrThrow("gro")));
+            teams.setPoints(cursor.getInt(cursor.getColumnIndex("poi")));
+        cursor.close();
+        dbHelper.close();
+        return teams;
+    }
+
 }

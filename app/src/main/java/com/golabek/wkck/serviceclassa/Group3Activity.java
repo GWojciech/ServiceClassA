@@ -4,12 +4,9 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-
+import com.golabek.wkck.serviceclassa.tabbed.RedirectActivity;
 import com.golabek.wkck.serviceclassa.tabbed.SectionsPageAdapter;
-import com.golabek.wkck.serviceclassa.tabbed.group3.ClassificationsGroup3Activity;
-import com.golabek.wkck.serviceclassa.tabbed.group3.ResultsGroup3Activity;
-import com.golabek.wkck.serviceclassa.tabbed.group3.ScheudleGroup3Activity;
-import com.golabek.wkck.serviceclassa.tabbed.group3.TableGroup3Activity;
+
 
 
 public class Group3Activity extends AppCompatActivity {
@@ -37,10 +34,10 @@ public class Group3Activity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(new ResultsGroup3Activity(), "Wyniki");
-        adapter.addFragment(new TableGroup3Activity(), "Tabela");
-        adapter.addFragment(new ScheudleGroup3Activity(), "Terminarz");
-        adapter.addFragment(new ClassificationsGroup3Activity(), "Klasyfikacje");
+        adapter.addFragment(new RedirectActivity(), "Wyniki");
+        adapter.addFragment(new RedirectActivity(), "Tabela");
+        adapter.addFragment(new RedirectActivity(), "Terminarz");
+        adapter.addFragment(new RedirectActivity(), "Klasyfikacje");
         viewPager.setAdapter(adapter);
     }
 

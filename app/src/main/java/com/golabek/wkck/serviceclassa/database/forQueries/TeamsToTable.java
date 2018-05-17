@@ -2,11 +2,20 @@ package com.golabek.wkck.serviceclassa.database.forQueries;
 
 public class TeamsToTable {
 
+    private Integer teamId;
     private String teamName;
     private Integer points;
     private Integer matchesPlayed;
     private Integer scoredGoals;
     private Integer lostGoals;
+
+    public Integer getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(Integer teamId) {
+        this.teamId = teamId;
+    }
 
     public String getTeamName() {
         return teamName;

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="6dip">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/firstSearchOther"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="Imię : "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/background_dark" />
+
+            <TextView
+                android:id="@+id/firstSearchOtherContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/secondSearchOther"
+                android:text="TextView"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="normal|bold|italic" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/secondSearchOther"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/firstSearchOther"
+                android:layout_below="@+id/firstSearchOther"
+                android:text="Nazwisko: "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/background_dark" />
+
+            <TextView
+                android:id="@+id/secondSearchOtherContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/secondSearchOther"
+                android:layout_below="@id/firstSearchOtherContent"
+                android:layout_toRightOf="@+id/secondSearchOther"
+                android:text="TextView"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold|italic" />
+        </TableRow>
+
+    </TableLayout>
+
+</RelativeLayout>

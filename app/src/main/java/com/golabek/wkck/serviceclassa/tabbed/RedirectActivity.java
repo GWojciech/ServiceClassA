@@ -1,4 +1,4 @@
-package com.golabek.wkck.serviceclassa.tabbed.group2;
+package com.golabek.wkck.serviceclassa.tabbed;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,10 +10,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.golabek.wkck.serviceclassa.Group1Activity;
-import com.golabek.wkck.serviceclassa.MainActivity;
 import com.golabek.wkck.serviceclassa.R;
 
-public class ResultsGroup2Activity extends Fragment {
+public class RedirectActivity extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {

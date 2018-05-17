@@ -6,11 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
 import com.golabek.wkck.serviceclassa.R;
-import com.golabek.wkck.serviceclassa.database.forQueries.TeamsToTable;
-import com.golabek.wkck.serviceclassa.database.operations.TableWithResults;
+
 
 
 import java.util.List;

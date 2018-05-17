@@ -28,7 +28,9 @@
         <activity
             android:name=".Group3Activity"
             android:label="@string/title_activity_group3"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".TeamInformationActivity" />
+        <activity android:name=".PlayerInformationActivity"></activity>
     </application>
 
 </manifest>
