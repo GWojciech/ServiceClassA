@@ -4,7 +4,6 @@ package com.golabek.wkck.serviceclassa.database.operations.mock;
 import android.util.Log;
 import com.golabek.wkck.serviceclassa.database.forQueries.mock.ScorersRank;
 
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,12 +11,6 @@ import java.util.List;
 
 public class BestScorers {
 
-//    private Context context;
-//
-//    public BestScorers (Context context){
-//        this.context=context;
-//
-//    }
 
     private String [] names = {"Jan", "Mateusz", "Wojciech", "Piotr", "Marian", "Paweł", "Ignacy", "Walerian","Krzysztof", "Andrzej", "Bartłomiej", "Szymon"};
     private String [] surnames = {"Kowalski", "Jansda", "Skowronek", "Kowal", "Kot", "Igos", "Łatas", "Warki", "Mapkli", "Zizia", "Łozia", "Kici"};

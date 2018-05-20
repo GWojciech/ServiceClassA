@@ -14,9 +14,6 @@ import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
-
-import com.golabek.wkck.serviceclassa.Group1Activity;
 import com.golabek.wkck.serviceclassa.R;
 import com.golabek.wkck.serviceclassa.TeamInformationActivity;
 import com.golabek.wkck.serviceclassa.database.forQueries.TeamsToTable;

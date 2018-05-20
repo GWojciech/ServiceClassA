@@ -12,7 +12,6 @@ import com.golabek.wkck.serviceclassa.database.forQueries.TeamsToTable;
 import com.golabek.wkck.serviceclassa.database.models.Teams;
 import com.golabek.wkck.serviceclassa.database.operations.TableWithResults;
 import com.golabek.wkck.serviceclassa.database.operations.TeamsController;
-import com.golabek.wkck.serviceclassa.tabbed.group1.TableGroup1Activity;
 
 public class TeamInformationActivity extends AppCompatActivity {
     public static Integer id;

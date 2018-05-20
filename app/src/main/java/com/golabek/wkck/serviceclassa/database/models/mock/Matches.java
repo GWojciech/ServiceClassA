@@ -1,9 +1,8 @@
 package com.golabek.wkck.serviceclassa.database.models.mock;
 
-import com.golabek.wkck.serviceclassa.database.forQueries.mock.ScorersRank;
 
 import java.util.Date;
-import java.util.List;
+
 
 public class Matches {
     private Date dateOfMatch;

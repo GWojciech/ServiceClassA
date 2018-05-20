@@ -9,12 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.TextView;
-
 import com.golabek.wkck.serviceclassa.R;
 import com.golabek.wkck.serviceclassa.database.models.mock.Matches;
-
 import java.util.ArrayList;
-import java.util.Date;
 
 public class ResultsAdapter extends ArrayAdapter<Matches> {
 

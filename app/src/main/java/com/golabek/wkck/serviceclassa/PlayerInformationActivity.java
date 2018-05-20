@@ -8,10 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.golabek.wkck.serviceclassa.database.forQueries.mock.ScorersRank;
 import com.golabek.wkck.serviceclassa.database.operations.mock.BestScorers;
-
 import java.util.List;
 import java.util.Random;
 

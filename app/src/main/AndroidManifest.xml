@@ -30,7 +30,8 @@
             android:label="@string/title_activity_group3"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".TeamInformationActivity" />
-        <activity android:name=".PlayerInformationActivity"></activity>
+        <activity android:name=".PlayerInformationActivity" />
+        <activity android:name=".MatchsInformation"></activity>
     </application>
 
 </manifest>

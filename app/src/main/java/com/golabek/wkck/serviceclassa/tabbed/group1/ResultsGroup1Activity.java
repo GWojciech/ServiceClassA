@@ -1,17 +1,21 @@
 package com.golabek.wkck.serviceclassa.tabbed.group1;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-
+import com.golabek.wkck.serviceclassa.MatchsInformation;
 import com.golabek.wkck.serviceclassa.R;
 import com.golabek.wkck.serviceclassa.database.forQueries.mock.MatchesForResults;
 import com.golabek.wkck.serviceclassa.database.models.mock.Matches;
@@ -42,9 +46,19 @@ public class ResultsGroup1Activity extends Fragment {
             {
                 ListView listView = viewToThread.findViewById(R.id.listViewResultsGroup1);
                 MatchesForResults matchesForResults = new MatchesForResults(viewToThread.getContext());
-                List<Matches> matchesList = matchesForResults.drawResults();
+                final List<Matches> matchesList = matchesForResults.drawResults();
                 ResultsAdapter resultsAdapter = new ResultsAdapter(viewToThread.getContext(), R.layout.result_info, (ArrayList<Matches>) matchesList);
                 listView.setAdapter(resultsAdapter);
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        MatchsInformation.matchToShow = matchesList.get(i);
+                        Log.d("UWAGA!", matchesList.get(i).toString());
+                        startActivity(new Intent(getActivity(), MatchsInformation.class));
+                        getActivity().finishAfterTransition();
+                    }
+                });
             }
         });
 

@@ -9,15 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
-
 import com.golabek.wkck.serviceclassa.R;
 import com.golabek.wkck.serviceclassa.database.models.mock.Matches;
 import com.golabek.wkck.serviceclassa.database.operations.mock.MatchdayScheudle;
 import com.golabek.wkck.serviceclassa.helperforviews.ScheudleAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 

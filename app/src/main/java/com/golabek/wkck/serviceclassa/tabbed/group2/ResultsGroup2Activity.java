@@ -8,9 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import com.golabek.wkck.serviceclassa.Group1Activity;
-import com.golabek.wkck.serviceclassa.MainActivity;
 import com.golabek.wkck.serviceclassa.R;
 
 public class ResultsGroup2Activity extends Fragment {

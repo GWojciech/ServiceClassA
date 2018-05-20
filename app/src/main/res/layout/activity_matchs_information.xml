@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MatchsInformation">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:foregroundGravity="right">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/homeTeamNameInfoTextView"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:lines="2"
+                        android:maxLines="4"
+                        android:minLines="1"
+                        android:text="TextView"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        tools:text="Orlęta Kielce" />
+
+                    <TextView
+                        android:id="@+id/homeTeamGoalsInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="TextView"
+                        android:textColor="@android:color/background_dark"
+                        android:textStyle="bold|italic" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/awayTeamNameInfoTextView"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:foregroundGravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:lines="2"
+                        android:maxLines="4"
+                        android:minLines="1"
+                        android:text="TextView"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        tools:text="Politechnika Świętokrzyska Kielce" />
+
+                    <TextView
+                        android:id="@+id/awayTeamGoalsInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:foregroundGravity="center_horizontal"
+                        android:text="TextView"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold|italic" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/matchEventsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingTop="20dp"
+                android:text="TextView"
+                android:textColor="@android:color/black"
+                tools:text="Przebieg spotkania:" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutToInfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"></LinearLayout>
+
+            <Button
+                android:id="@+id/returnToResultsFromInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Powrót"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="196dp"
+                tools:layout_editor_absoluteY="447dp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
