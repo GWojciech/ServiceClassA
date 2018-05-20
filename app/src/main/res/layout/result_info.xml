@@ -1,65 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:padding="6dip">
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:foregroundGravity="right">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_horizontal">
+            android:foregroundGravity="center_horizontal">
 
             <TextView
-                android:id="@+id/homeTeamScheuldeTextView"
-                android:layout_width="wrap_content"
+                android:id="@+id/homeTeamNameResultTextView"
+                android:layout_width="270dp"
                 android:layout_height="wrap_content"
-                android:text="Orlęta Kielce"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/VSScheuldeTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
+                android:lines="2"
+                android:maxLines="4"
+                android:minLines="1"
                 android:text="TextView"
                 android:textColor="@android:color/black"
-                android:textSize="18sp"
-                tools:text=" vs " />
+                android:textStyle="bold"
+                tools:text="Orlęta Kielce" />
 
             <TextView
-                android:id="@+id/awayTeamScheuldeTextViewtextView5"
+                android:id="@+id/homeTeamGoalsResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tęcza Gowarczów"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
+                android:layout_marginLeft="20dp"
+                android:text="TextView"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold|italic" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_horizontal">
+            android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/dateOfMatchScheudleTextView"
-                android:layout_width="wrap_content"
+                android:id="@+id/awayTeamNameResultTextView"
+                android:layout_width="270dp"
                 android:layout_height="wrap_content"
-                android:text="12.05.2018" />
+                android:foregroundGravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:lines="2"
+                android:maxLines="4"
+                android:minLines="1"
+                android:text="TextView"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                tools:text="Politechnika Świętokrzyska Kielce" />
 
             <TextView
-                android:id="@+id/hourOfMatchScheudleTextView"
+                android:id="@+id/awayTeamGoalsResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="godz. 15:00" />
+                android:layout_marginLeft="20dp"
+                android:foregroundGravity="center_horizontal"
+                android:text="TextView"
+                android:textColor="@android:color/black"
+                android:textStyle="bold|italic" />
 
         </TableRow>
 
     </TableLayout>
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

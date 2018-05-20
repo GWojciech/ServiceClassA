@@ -60,4 +60,16 @@ public class Matches {
     public void setAwayTeamGoals(Integer awayTeamGoals) {
         this.awayTeamGoals = awayTeamGoals;
     }
+
+    @Override
+    public String toString() {
+        return "Matches{" +
+                "dateOfMatch=" + dateOfMatch +
+                ", homeTeam='" + homeTeam + '\'' +
+                ", awayTeam='" + awayTeam + '\'' +
+                ", played=" + played +
+                ", homeTeamGoals=" + homeTeamGoals +
+                ", awayTeamGoals=" + awayTeamGoals +
+                '}';
+    }
 }

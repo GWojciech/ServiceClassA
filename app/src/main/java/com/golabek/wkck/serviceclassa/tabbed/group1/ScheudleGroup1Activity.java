@@ -1,6 +1,7 @@
 package com.golabek.wkck.serviceclassa.tabbed.group1;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -61,12 +62,19 @@ public class ScheudleGroup1Activity extends Fragment {
 
     }
 
-    private void fillListView(View view){
-        ListView listView = view.findViewById(R.id.listViewScheudle);
-        MatchdayScheudle matchdayScheudle = new MatchdayScheudle(view.getContext());
-        List<Matches> matchesList = matchdayScheudle.getMatchdayScheudle(1);
-        ScheudleAdapter scheudleAdapter = new ScheudleAdapter(view.getContext(), R.layout.scheudle_info, (ArrayList<Matches>) matchesList);
-        listView.setAdapter(scheudleAdapter);
+    private void fillListView(View view) {
+        final View viewToThread = view;
+        new Handler().post(new Runnable() {
+
+            @Override
+            public void run() {
+                ListView listView = viewToThread.findViewById(R.id.listViewScheudle);
+                MatchdayScheudle matchdayScheudle = new MatchdayScheudle(viewToThread.getContext());
+                List<Matches> matchesList = matchdayScheudle.getMatchdayScheudle(1);
+                ScheudleAdapter scheudleAdapter = new ScheudleAdapter(viewToThread.getContext(), R.layout.scheudle_info, (ArrayList<Matches>) matchesList);
+                listView.setAdapter(scheudleAdapter);
+            }
+        });
     }
 
 }

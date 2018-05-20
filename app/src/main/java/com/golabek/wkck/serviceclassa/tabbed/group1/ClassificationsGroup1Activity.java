@@ -100,6 +100,7 @@ public class ClassificationsGroup1Activity extends Fragment {
             scorersRank = listOfScorers.get(i);
             newTableRow = new TableRow(getContext());
             newTableRow.setMinimumHeight(50);
+            newTableRow.setGravity(Gravity.CENTER_HORIZONTAL);
             if(i==0){
                 newTableRow.setBackgroundColor(Color.GREEN);
             }

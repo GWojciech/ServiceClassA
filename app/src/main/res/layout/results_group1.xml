@@ -12,6 +12,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -29,7 +34,7 @@
                 android:id="@+id/resultsTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="x kolejka"
+                android:text="4. kolejka"
                 android:textColor="@android:color/background_dark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -42,5 +47,12 @@
                 android:drawableStart="@drawable/baseline_keyboard_arrow_right_black_18" />
 
         </TableRow>
+        </TableLayout>
+
+        <ListView
+            android:id="@+id/listViewResultsGroup1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

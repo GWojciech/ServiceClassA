@@ -25,7 +25,6 @@ public class Group1Activity extends AppCompatActivity {
 
         mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
 
-        // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container2);
         setupViewPager(mViewPager);
 
