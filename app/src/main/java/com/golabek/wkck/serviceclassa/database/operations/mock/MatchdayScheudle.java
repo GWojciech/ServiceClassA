@@ -23,7 +23,12 @@ public class MatchdayScheudle {
         TeamsController teamsController = new TeamsController(context);
         List <Teams> listOfTeams = teamsController.getTeamsWithGroups();
         Teams teamToList;
-        Date date = new Date(2018, 05, 13, 15,0);
+        Date date = new Date();
+        date.setMonth(8);
+        date.setDate(23);
+        date.setHours(15);
+        date.setMinutes(0);
+
         int randNumberHomeTeam, randNumberAwayTeam;
         Random random;
         for(int i=0; i<6; i++){

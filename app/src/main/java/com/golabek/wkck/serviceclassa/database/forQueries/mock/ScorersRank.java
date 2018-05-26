@@ -10,6 +10,7 @@ public class ScorersRank implements Comparable<ScorersRank> {
     private String teamName;
     private Integer goals;
     private Integer assists;
+    private String website;
 
     public String getName() {
         return name;
@@ -49,6 +50,14 @@ public class ScorersRank implements Comparable<ScorersRank> {
 
     public void setAssists(Integer assists) {
         this.assists = assists;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
     }
 
     @Override

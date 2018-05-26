@@ -15,7 +15,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.golabek.wkck.serviceclassa.MatchsInformation;
+import com.golabek.wkck.serviceclassa.MatchesInformation;
 import com.golabek.wkck.serviceclassa.R;
 import com.golabek.wkck.serviceclassa.database.forQueries.mock.MatchesForResults;
 import com.golabek.wkck.serviceclassa.database.models.mock.Matches;
@@ -53,9 +53,9 @@ public class ResultsGroup1Activity extends Fragment {
                     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        MatchsInformation.matchToShow = matchesList.get(i);
+                        MatchesInformation.matchToShow = matchesList.get(i);
                         Log.d("UWAGA!", matchesList.get(i).toString());
-                        startActivity(new Intent(getActivity(), MatchsInformation.class));
+                        startActivity(new Intent(getActivity(), MatchesInformation.class));
                         getActivity().finishAfterTransition();
                     }
                 });

@@ -106,6 +106,16 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/playerInfoWebsite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Więcej informacji"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
             <Button
                 android:id="@+id/buttonReturnPlayer"
                 android:layout_width="match_parent"

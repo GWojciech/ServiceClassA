@@ -5,6 +5,8 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -50,6 +52,11 @@ public class TeamInformationActivity extends AppCompatActivity {
     private void setDescription(Teams teams, TeamsToTable teamsToTable){
         TextView textView = (TextView) findViewById(R.id.name_of_team_TextView);
         textView.setText(teams.getName());
+        textView = findViewById(R.id.websiteTeamTextView);
+        textView.setClickable(true);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        String text = "<a href="+teams.getWebsite()+"> Strona internetowa </a>";
+        textView.setText(Html.fromHtml(text));
         textView = (TextView) findViewById(R.id.name_of_group);
         textView.setText(teams.getNameOfGroup());
         textView = (TextView) findViewById(R.id.playedMatchesTeam);

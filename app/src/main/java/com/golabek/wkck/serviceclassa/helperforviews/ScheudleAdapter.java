@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.golabek.wkck.serviceclassa.R;
 import com.golabek.wkck.serviceclassa.database.models.mock.Matches;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ArrayList;
 
@@ -47,7 +48,8 @@ public class ScheudleAdapter extends ArrayAdapter<Matches> {
         firstLabel.setText(currentMatch.getHomeTeam());
         secondLabel.setText(currentMatch.getAwayTeam());
         Date date = currentMatch.getDateOfMatch();
-        thirdLabel.setText("0"+date.getDay()+"."+"0"+date.getMonth()+"."+"202"+date.getDay() + ", godz. "+date.getHours()+ ":0"+ date.getMinutes());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        thirdLabel.setText(dateFormat.format(date));
 
 
 

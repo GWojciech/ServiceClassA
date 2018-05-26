@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MatchsInformation">
+    tools:context=".MatchesInformation">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -100,7 +100,19 @@
                 android:id="@+id/linearLayoutToInfo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/moreMatchesHyperLinkTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="link"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/returnToResultsFromInfo"
@@ -111,6 +123,7 @@
                 android:visibility="visible"
                 tools:layout_editor_absoluteX="196dp"
                 tools:layout_editor_absoluteY="447dp" />
+
         </LinearLayout>
     </ScrollView>
 

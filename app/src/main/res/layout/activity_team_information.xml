@@ -43,6 +43,16 @@
                 android:textStyle="bold|italic" />
 
             <TextView
+                android:id="@+id/websiteTeamTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Strona internetowa"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
                 android:id="@+id/theHighestLeague"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

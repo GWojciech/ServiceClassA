@@ -5,6 +5,8 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -60,6 +62,11 @@ public class PlayerInformationActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.playedMatchesByPlayer);
         Integer number = 1+generator.nextInt(5);
         textView.setText(textView.getText()+" "+number.toString());
+        textView = (TextView) findViewById(R.id.playerInfoWebsite);
+        textView.setClickable(true);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        String text = "<a href="+scorersRank.getWebsite()+"> Więcej informacji </a>";
+        textView.setText(Html.fromHtml(text));
 
     }
 }

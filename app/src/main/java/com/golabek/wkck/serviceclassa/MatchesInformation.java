@@ -6,6 +6,8 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -14,13 +16,13 @@ import android.widget.TextView;
 
 import com.golabek.wkck.serviceclassa.database.models.mock.Matches;
 
-public class MatchsInformation extends AppCompatActivity {
+public class MatchesInformation extends AppCompatActivity {
     public static Matches matchToShow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_matchs_information);
+        setContentView(R.layout.activity_matches_information);
         showInfo();
     }
 
@@ -69,6 +71,11 @@ public class MatchsInformation extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.returnToResultsFromInfo);
         //linearLayout.addView(button);
         initListener(button);
+        textView =(TextView)findViewById(R.id.moreMatchesHyperLinkTextView);
+        textView.setClickable(true);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        String text = "<a href='http://kieleckapilka.pl/competition.php?compid=806'> Więcej informacji </a>";
+        textView.setText(Html.fromHtml(text));
     }
 
     private void initListener(Button button){
@@ -76,7 +83,7 @@ public class MatchsInformation extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MatchsInformation.this, Group1Activity.class));
+                startActivity(new Intent(MatchesInformation.this, Group1Activity.class));
                 finishAfterTransition();
             }
         });

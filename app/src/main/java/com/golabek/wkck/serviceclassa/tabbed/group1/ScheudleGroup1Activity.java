@@ -1,5 +1,6 @@
 package com.golabek.wkck.serviceclassa.tabbed.group1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -7,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -15,6 +17,7 @@ import com.golabek.wkck.serviceclassa.database.models.mock.Matches;
 import com.golabek.wkck.serviceclassa.database.operations.mock.MatchdayScheudle;
 import com.golabek.wkck.serviceclassa.helperforviews.ScheudleAdapter;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class ScheudleGroup1Activity extends Fragment {
@@ -66,9 +69,23 @@ public class ScheudleGroup1Activity extends Fragment {
             public void run() {
                 ListView listView = viewToThread.findViewById(R.id.listViewScheudle);
                 MatchdayScheudle matchdayScheudle = new MatchdayScheudle(viewToThread.getContext());
-                List<Matches> matchesList = matchdayScheudle.getMatchdayScheudle(1);
+                final List<Matches> matchesList = matchdayScheudle.getMatchdayScheudle(1);
                 ScheudleAdapter scheudleAdapter = new ScheudleAdapter(viewToThread.getContext(), R.layout.scheudle_info, (ArrayList<Matches>) matchesList);
                 listView.setAdapter(scheudleAdapter);
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Calendar cal = Calendar.getInstance();
+                        Matches match = matchesList.get(i);
+                        Intent intent = new Intent(Intent.ACTION_EDIT);
+                        intent.setType("vnd.android.cursor.item/event");
+                        intent.putExtra("beginTime", match.getDateOfMatch().getTime());
+                        intent.putExtra("allDay", false);
+                        intent.putExtra("endTime", match.getDateOfMatch().getTime()+120*60*1000);
+                        intent.putExtra("title", match.getHomeTeam()+" vs " + match.getAwayTeam());
+                        startActivity(intent);
+                    }
+                });
             }
         });
     }
