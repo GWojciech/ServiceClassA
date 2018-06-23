@@ -9,20 +9,22 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.TextView;
-import java.util.ArrayList;
+
 import com.golabek.wkck.serviceclassa.R;
-import com.golabek.wkck.serviceclassa.database.forQueries.mock.ScorersRank;
+import com.golabek.wkck.serviceclassa.database.models.ConcretePlayer;
 
-public class SearchPlayerAdapter extends ArrayAdapter<ScorersRank> {
+import java.util.ArrayList;
+
+public class SearchPlayerAdapter extends ArrayAdapter<ConcretePlayer> {
     private TransactionFilter filter;
-    private ArrayList<ScorersRank> originalList;
-    private ArrayList<ScorersRank> playerList;
+    private ArrayList<ConcretePlayer> originalList;
+    private ArrayList<ConcretePlayer> playerList;
 
-    public SearchPlayerAdapter(Context context, int textViewResourceId, ArrayList<ScorersRank> playerList) {
+    public SearchPlayerAdapter(Context context, int textViewResourceId, ArrayList<ConcretePlayer> playerList) {
         super(context, textViewResourceId, playerList);
-        this.playerList = new ArrayList<ScorersRank>();
+        this.playerList = new ArrayList<ConcretePlayer>();
         this.playerList.addAll(playerList);
-        this.originalList = new ArrayList<ScorersRank>();
+        this.originalList = new ArrayList<ConcretePlayer>();
         this.originalList.addAll(playerList);
 
     }
@@ -40,7 +42,7 @@ public class SearchPlayerAdapter extends ArrayAdapter<ScorersRank> {
         TextView firstContent = searchPlayerView.findViewById(R.id.firstSearchOtherContent);
         TextView secondContent = searchPlayerView.findViewById(R.id.secondSearchOtherContent);
 
-        ScorersRank currentPlayer = playerList.get(position);
+        ConcretePlayer currentPlayer = playerList.get(position);
         firstLabel.setText("Imię i nazwisko: ");
         firstContent.setText(currentPlayer.getName()+" " + currentPlayer.getSurname());
         secondLabel.setText("Drużyna: ");
@@ -70,11 +72,11 @@ public class SearchPlayerAdapter extends ArrayAdapter<ScorersRank> {
             FilterResults result = new FilterResults();
             if(constraint != null && constraint.toString().length() > 0)
             {
-                ArrayList<ScorersRank> filteredItems = new ArrayList<ScorersRank>();
+                ArrayList<ConcretePlayer> filteredItems = new ArrayList<ConcretePlayer>();
 
                 for(int i = 0, l = originalList.size(); i < l; i++)
                 {
-                    ScorersRank country = originalList.get(i);
+                    ConcretePlayer country = originalList.get(i);
                     if(country.toString().toLowerCase().contains(constraint))
                         filteredItems.add(country);
                 }
@@ -97,7 +99,7 @@ public class SearchPlayerAdapter extends ArrayAdapter<ScorersRank> {
         protected void publishResults(CharSequence constraint,
                                       FilterResults results) {
 
-            playerList = (ArrayList<ScorersRank>)results.values;
+            playerList = (ArrayList<ConcretePlayer>)results.values;
             notifyDataSetChanged();
             clear();
             for(int i = 0, l = playerList.size(); i < l; i++)

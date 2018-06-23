@@ -1,22 +1,48 @@
-package com.golabek.wkck.serviceclassa.database.models.mock;
-
-
-import java.util.Date;
+package com.golabek.wkck.serviceclassa.database.models;
 
 
 public class Matches {
-    private Date dateOfMatch;
+    private Integer id;
+    private String dateOfMatch;
     private String homeTeam;
     private String awayTeam;
     private Boolean played;
     private Integer homeTeamGoals;
     private Integer awayTeamGoals;
 
-    public Date getDateOfMatch() {
+    public Matches(){ }
+
+    public Matches(Integer id, String dateOfMatch, String homeTeam, String awayTeam, Boolean played, Integer homeTeamGoals, Integer awayTeamGoals) {
+        this.id = id;
+        this.dateOfMatch = dateOfMatch;
+        this.homeTeam = homeTeam;
+        this.awayTeam = awayTeam;
+        this.played = played;
+        this.homeTeamGoals = homeTeamGoals;
+        this.awayTeamGoals = awayTeamGoals;
+    }
+
+    public Matches(Integer id, String dateOfMatch, String homeTeam, String awayTeam, Boolean played) {
+        this.id = id;
+        this.dateOfMatch = dateOfMatch;
+        this.homeTeam = homeTeam;
+        this.awayTeam = awayTeam;
+        this.played = played;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getDateOfMatch() {
         return dateOfMatch;
     }
 
-    public void setDateOfMatch(Date dateOfMatch) {
+    public void setDateOfMatch(String dateOfMatch) {
         this.dateOfMatch = dateOfMatch;
     }
 

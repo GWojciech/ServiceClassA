@@ -11,10 +11,8 @@ import android.widget.Filter;
 import android.widget.TextView;
 
 import com.golabek.wkck.serviceclassa.R;
-import com.golabek.wkck.serviceclassa.database.models.mock.Matches;
+import com.golabek.wkck.serviceclassa.database.models.Matches;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.ArrayList;
 
 public class ScheudleAdapter extends ArrayAdapter<Matches> {
@@ -47,9 +45,8 @@ public class ScheudleAdapter extends ArrayAdapter<Matches> {
         Matches currentMatch = matchesList.get(position);
         firstLabel.setText(currentMatch.getHomeTeam());
         secondLabel.setText(currentMatch.getAwayTeam());
-        Date date = currentMatch.getDateOfMatch();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-        thirdLabel.setText(dateFormat.format(date));
+        String date = currentMatch.getDateOfMatch();
+        thirdLabel.setText(date);
 
 
 

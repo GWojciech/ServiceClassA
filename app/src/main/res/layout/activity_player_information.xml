@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:text="Data urodzenia: 31.05.2000"
+                android:text="Data urodzenia: "
                 android:textSize="20sp"
                 android:textStyle="bold|italic" />
 
@@ -95,16 +95,6 @@
                 android:text="Asysty: "
                 android:textSize="20sp"
                 android:textStyle="bold|italic" />
-
-            <TextView
-                android:id="@+id/playedMatchesByPlayer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:text="Rozegrane mecze: "
-                android:textSize="20dp"
-                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/playerInfoWebsite"

@@ -10,22 +10,21 @@ import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.TextView;
 
-import com.golabek.wkck.serviceclassa.database.forQueries.TeamsToTable;
-import java.util.ArrayList;
 import com.golabek.wkck.serviceclassa.R;
-import com.golabek.wkck.serviceclassa.database.models.Teams;
-import com.golabek.wkck.serviceclassa.database.operations.TeamsController;
+import com.golabek.wkck.serviceclassa.database.models.ConcreteTeam;
 
-public class SearchTeamAdapter extends ArrayAdapter<TeamsToTable> {
+import java.util.ArrayList;
+
+public class SearchTeamAdapter extends ArrayAdapter<ConcreteTeam> {
     private TransactionFilter filter;
-private ArrayList<TeamsToTable> originalList;
-private ArrayList<TeamsToTable> teamList;
+private ArrayList<ConcreteTeam> originalList;
+private ArrayList<ConcreteTeam> teamList;
 
-    public SearchTeamAdapter(Context context, int textViewResourceId, ArrayList<TeamsToTable> teamList) {
+    public SearchTeamAdapter(Context context, int textViewResourceId, ArrayList<ConcreteTeam> teamList) {
         super(context, textViewResourceId, teamList);
-        this.teamList = new ArrayList<TeamsToTable>();
+        this.teamList = new ArrayList<ConcreteTeam>();
         this.teamList.addAll(teamList);
-        this.originalList = new ArrayList<TeamsToTable>();
+        this.originalList = new ArrayList<ConcreteTeam>();
         this.originalList.addAll(teamList);
 
     }
@@ -37,7 +36,6 @@ public View getView(int position, @Nullable View convertView, @NonNull ViewGroup
 
         LayoutInflater playerInflater = LayoutInflater.from(getContext());
         View searchPlayerView = playerInflater.inflate(R.layout.search_info, parent, false);
-        TeamsController teamsController = new TeamsController(getContext());
 
 
         TextView firstLabel = (TextView) searchPlayerView.findViewById(R.id.firstSearchOther);
@@ -45,12 +43,11 @@ public View getView(int position, @Nullable View convertView, @NonNull ViewGroup
         TextView firstContent = searchPlayerView.findViewById(R.id.firstSearchOtherContent);
         TextView secondContent = searchPlayerView.findViewById(R.id.secondSearchOtherContent);
 
-        TeamsToTable currentTeam = teamList.get(position);
+        ConcreteTeam currentTeam = teamList.get(position);
         firstLabel.setText("Nazwa drużyny: ");
         firstContent.setText(currentTeam.getTeamName());
-        Teams teams = teamsController.getTeamById(currentTeam.getTeamId());
         secondLabel.setText("Grupa: ");
-        secondContent.setText(teams.getNameOfGroup());
+        secondContent.setText(currentTeam.getNameOfGroup());
 
         return searchPlayerView;
 
@@ -75,11 +72,11 @@ private class TransactionFilter extends Filter
         FilterResults result = new FilterResults();
         if(constraint != null && constraint.toString().length() > 0)
         {
-            ArrayList<TeamsToTable> filteredItems = new ArrayList<TeamsToTable>();
+            ArrayList<ConcreteTeam> filteredItems = new ArrayList<ConcreteTeam>();
 
             for(int i = 0, l = originalList.size(); i < l; i++)
             {
-                TeamsToTable country = originalList.get(i);
+                ConcreteTeam country = originalList.get(i);
                 if(country.toString().toLowerCase().contains(constraint))
                     filteredItems.add(country);
             }
@@ -102,7 +99,7 @@ private class TransactionFilter extends Filter
     protected void publishResults(CharSequence constraint,
                                   FilterResults results) {
 
-        teamList = (ArrayList<TeamsToTable>)results.values;
+        teamList = (ArrayList<ConcreteTeam>)results.values;
         notifyDataSetChanged();
         clear();
         for(int i = 0, l = teamList.size(); i < l; i++)

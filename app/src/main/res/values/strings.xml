@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Klasa A świętokrzyska</string>
+    <string name="URL_address">http://192.168.1.5:8080/ServiceClassA/webresources</string>
     <string name="title_activity_tabbed">tabbedActivity</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>

@@ -1,9 +1,10 @@
 package com.golabek.wkck.serviceclassa;
 
-import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+
 import com.golabek.wkck.serviceclassa.tabbed.SectionsPageAdapter;
 import com.golabek.wkck.serviceclassa.tabbed.group1.ClassificationsGroup1Activity;
 import com.golabek.wkck.serviceclassa.tabbed.group1.ResultsGroup1Activity;

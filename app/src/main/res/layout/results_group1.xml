@@ -34,7 +34,7 @@
                 android:id="@+id/resultsTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4. kolejka"
+                android:text="1. kolejka"
                 android:textColor="@android:color/background_dark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
